@@ -54,3 +54,6 @@ checkpoints/
 
 # Streamlit
 .streamlit/secrets.toml
+
+feedback/history.json
+feedback/model_state.json
