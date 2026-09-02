@@ -16,7 +16,7 @@ Member 3 can do cost-sensitive / ranked training, not just binary.
 """
 
 import numpy as np
-import fake_data as fd
+import generate.fake_data as fd
 
 
 def _bump(rng, low, high):

@@ -19,9 +19,9 @@ import argparse
 import os
 import sys
 
-from config import ATTACK_TYPES
-from transaction_sim import generate_transactions, generate_balanced_dataset, generate_realistic_holdout
-from fidelity_checker import run_fidelity_report, print_report
+from .config import ATTACK_TYPES
+from .transaction_sim import generate_transactions, generate_balanced_dataset, generate_realistic_holdout
+from .fidelity_checker import run_fidelity_report, print_report
 
 
 def main():

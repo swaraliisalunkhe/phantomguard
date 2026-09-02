@@ -16,7 +16,7 @@ credentials).
 from dataclasses import dataclass, field
 import numpy as np
 
-import fake_data as fd
+import generate.fake_data as fd
 
 
 @dataclass

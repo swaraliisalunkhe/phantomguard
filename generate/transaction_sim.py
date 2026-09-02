@@ -26,11 +26,11 @@ from datetime import datetime, timedelta
 import numpy as np
 import pandas as pd
 
-import fake_data as fd
-from persona_generator import generate_persona
-from config import get_attack_config, ATTACK_REGISTRY
-import pattern_injector as pi
-from schema import ALL_COLUMNS
+import generate.fake_data as fd
+from .persona_generator import generate_persona
+from .config import get_attack_config, ATTACK_REGISTRY
+import generate.pattern_injector as pi
+from .schema import ALL_COLUMNS
 
 BASE_DATE = datetime(2026, 6, 1)
 

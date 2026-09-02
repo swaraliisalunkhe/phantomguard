@@ -38,10 +38,10 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from common import build_neighbor_means, build_sequences  # noqa: E402
-from gnn_model import GraphSAGEClassifier  # noqa: E402
-from meta_classifier import stack_probabilities  # noqa: E402
-from tcn_model import TCNClassifier  # noqa: E402
+from .common import build_neighbor_means, build_sequences  # noqa: E402
+from .gnn_model import GraphSAGEClassifier  # noqa: E402
+from .meta_classifier import stack_probabilities  # noqa: E402
+from .tcn_model import TCNClassifier  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Fake‑transaction generator

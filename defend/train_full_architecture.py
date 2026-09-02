@@ -8,7 +8,7 @@ import joblib
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-from common import (
+from .common import (
     build_neighbor_means,
     build_preprocessor,
     build_sequences,
@@ -19,10 +19,10 @@ from common import (
     set_seed,
     split_features,
 )
-from gnn_model import train_gnn
-from meta_classifier import stack_probabilities, train_meta_classifier
-from tcn_model import train_tcn
-from xgboost_model import train_xgboost
+from .gnn_model import train_gnn
+from .meta_classifier import stack_probabilities, train_meta_classifier
+from .tcn_model import train_tcn
+from .xgboost_model import train_xgboost
 
 
 DEFAULT_DATA_DIR = "data/phantomguard_tcn_dataset/phantomguard_generate/data"
