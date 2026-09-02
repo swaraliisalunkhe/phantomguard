@@ -34,9 +34,10 @@ class AttackGenerator:
         api_key = os.getenv("GEMINI_API_KEY")
 
         if not api_key:
-            raise RuntimeError("GEMINI_API_KEY was not found.")
-
-        self.client = genai.Client(api_key=api_key)
+            self.client = None
+            print("WARNING: GEMINI_API_KEY not found. Using mock generator.")
+        else:
+            self.client = genai.Client(api_key=api_key)
 
         self.model = "gemini-3.7-flash"
 
@@ -122,6 +123,21 @@ set known_type to true.
 Return exactly ONE AttackHypothesis object.
 """
 
+
+        if not self.client:
+            import uuid
+            return AttackHypothesis(
+                attack_id=str(uuid.uuid4()),
+                attack_name=f"Mock {genai_capability} Attack",
+                attack_type="voice_cloning_fraud",
+                attack_category="synthetic",
+                description=f"Mocked {fraud_pattern} using {genai_capability} targeting {payment_vulnerability}.",
+                severity_score=5,
+                feasibility_score=5,
+                novelty_score=5,
+                risk_score=5,
+                known_type=True
+            )
 
         # Retry temporary Gemini server failures.
         max_retries = 3
