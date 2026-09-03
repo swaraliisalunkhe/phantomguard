@@ -25,8 +25,6 @@ def scan_text(request: ScanRequest):
 
 @router.post("/identify")
 def identify_threat(request: ThreatMineRequest):
-    if not os.getenv("GEMINI_API_KEY"):
-        raise HTTPException(status_code=500, detail="GEMINI_API_KEY is not configured.")
     try:
         attack = threat_miner.mine_threat(
             fraud_pattern=request.fraud_pattern,
